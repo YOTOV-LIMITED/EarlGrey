@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Earlgrey by YOTOV-LIMITED</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Earlgrey</h1>
+      <h2 class="project-tagline">iOS UI Automation Test Framework</h2>
+      <a href="https://github.com/YOTOV-LIMITED/EarlGrey" class="btn">View on GitHub</a>
+      <a href="https://github.com/YOTOV-LIMITED/EarlGrey/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/YOTOV-LIMITED/EarlGrey/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="earlgrey" class="anchor" href="#earlgrey" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>EarlGrey</h1>
+
+<p>EarlGrey is a native iOS UI automation test framework that enables you to write
+clear, concise tests.</p>
+
+<p>With the EarlGrey framework, you have access to enhanced synchronization
+features. EarlGrey automatically synchronizes with the UI, network requests,
+and various queues, but still allows you to manually implement customized
+timings, if needed.</p>
+
+<p>EarlGrey’s synchronization features help ensure that the UI is in a steady
+state before actions are performed. This greatly increases test stability and
+makes tests highly repeatable.</p>
+
+<p>EarlGrey works in conjunction with the XCTest framework and integrates with
+Xcode’s Test Navigator so you can run tests directly from Xcode or the command
+line (using xcodebuild).</p>
+
+<h2>
+<a id="getting-started" class="anchor" href="#getting-started" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Getting Started</h2>
+
+<p>The EarlGrey documentation for users is located in the
+<a href="https://github.com/google/EarlGrey/tree/master/docs">EarlGrey/docs</a> folder.
+To get started, review the EarlGrey features, check for backward compatibility,
+and then install/run EarlGrey with your test target. Once everything is
+configured, take a look at the EarlGrey API and start writing your own tests.</p>
+
+<ul>
+<li><a href="https://github.com/google/EarlGrey/tree/master/docs/features.md">Features</a></li>
+<li><a href="https://github.com/google/EarlGrey/tree/master/docs/backward-compatibility.md">Backward Compatibility</a></li>
+<li><a href="https://github.com/google/EarlGrey/tree/master/docs/install-and-run.md">Install and Run</a></li>
+<li><a href="https://github.com/google/EarlGrey/tree/master/docs/api.md">API</a></li>
+</ul>
+
+<h2>
+<a id="getting-help" class="anchor" href="#getting-help" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Getting Help</h2>
+
+<p>If you need help, several resources are available. First check the FAQ. If the
+answers you need are not there, read through the Known Issues. If you still have
+questions, contact us using our <a href="https://groups.google.com/forum/#!forum/earlgrey-discuss">Google group</a>.</p>
+
+<ul>
+<li><a href="https://github.com/google/EarlGrey/tree/master/docs/faq.md">FAQ</a></li>
+<li><a href="https://github.com/google/EarlGrey/tree/master/docs/known-issues.md">Known Issues</a></li>
+</ul>
+
+<h2>
+<a id="analytics" class="anchor" href="#analytics" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Analytics</h2>
+
+<p>To prioritize and improve EarlGrey, the framework collects usage data and
+uploads it to Google Analytics. More specifically, the framework collects the
+App’s <em>Bundle ID</em> (as a MD5 hash) and the total number of test cases. This
+information allows us to measure the volume of usage. If they wish, users can
+choose to opt out by disabling the Analytics config setting in their test’s
+setUp method:</p>
+
+<pre><code>// Disable analytics.
+[[GREYConfiguration sharedInstance] setValue:@(NO) forConfigKey:kGREYConfigKeyAnalyticsEnabled];
+</code></pre>
+
+<h2>
+<a id="for-contributors" class="anchor" href="#for-contributors" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>For Contributors</h2>
+
+<p>Please make sure you’ve followed the guidelines in
+<a href="./CONTRIBUTING.md">CONTRIBUTING.md</a> before making any contributions.</p>
+
+<h3>
+<a id="setup-earlgrey-project" class="anchor" href="#setup-earlgrey-project" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Setup EarlGrey Project</h3>
+
+<ol>
+<li>
+<p>Clone the EarlGrey repository from Github:</p>
+
+<pre><code>  git clone https://github.com/google/EarlGrey.git
+</code></pre>
+</li>
+<li><p>Once you have the EarlGrey repository, download all the dependencies using the
+<code>setup-earlgrey.sh</code> script (run the script from the cloned repo).</p></li>
+<li>Once the script completes successfully, open <code>EarlGrey.xcodeproj</code> and ensure all
+the targets build.</li>
+<li>You can now use <code>EarlGrey.xcodeproj</code> to make changes to the framework.</li>
+</ol>
+
+<h3>
+<a id="add-and-run-tests" class="anchor" href="#add-and-run-tests" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Add and Run Tests</h3>
+
+<h4>
+<a id="unit-tests" class="anchor" href="#unit-tests" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Unit Tests</h4>
+
+<p>To add unit tests for EarlGrey use <code>UnitTests.xcodeproj</code> located at
+<code>Tests/UnitTests</code>. To run all unit tests, select the <strong>UnitTests</strong> Scheme and press Cmd+U.</p>
+
+<h4>
+<a id="functional-tests" class="anchor" href="#functional-tests" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Functional Tests</h4>
+
+<p>To add functional tests for EarlGrey use the <code>FunctionalTests.xcodeproj</code> located
+at <code>Tests/FunctionalTests</code>. To run all functional tests, select the <strong>FunctionalTests</strong> Scheme and press Cmd+U.</p>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/YOTOV-LIMITED/EarlGrey">Earlgrey</a> is maintained by <a href="https://github.com/YOTOV-LIMITED">YOTOV-LIMITED</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+            <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-73765225-1");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+  </body>
+</html>
